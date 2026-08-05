@@ -1,9 +1,19 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>Prototype</title>
+<!--
+  ★ 게임명 «단일 소스»는 src/brand.ts 다. 여기 title 은 그 «사본»이다.
+    왜 사본을 두나 - JS 가 applyDocumentTitle() 로 런타임 주입하는 것만으로는
+    부족하다. 링크 공유 카드·검색엔진 색인·JS 실행 전 탭은 전부 «정적» title 을
+    읽고, 크롤러는 JS 를 실행하지 않는다. 실제로 GitHub Pages 배포 후
+    「Prototype」 이 그대로 노출됐다(2026-08-05, 배포 뒤에야 드러남).
+    로컬에선 JS 가 즉시 돌아 안 보인다 - 「로컬에선 되는데 배포에선 안 되는」 유형.
+  ★ brand.ts 를 바꾸면 «여기도 같이» 바꿔라. 자동 동기화 장치가 아직 없다.
+-->
+<title>애니멀 라이더 / Animal Rider</title>
+<meta name="description" content="동물을 타고 언덕을 넘으며 공중 회전을 쌓는 곡예 라이더 게임" />
 <style>
   html,body{margin:0;padding:0;background:#87ceeb;overflow:hidden;height:100%;}
   #app{display:flex;align-items:center;justify-content:center;height:100%;}
