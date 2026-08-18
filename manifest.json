@@ -1,0 +1,175 @@
+{
+  "id": "animal-rider",
+  "name": "Animal Rider",
+  "short_name": "AnimalRider",
+  "description": "One-touch stunt riding. Hold to charge down a slope, let go to launch, and land clean to keep your combo alive. 48 stages across 6 illustrated zones, 144 stars to collect and 24 animals to unlock. Runs offline once loaded, with no ads, no sign-in and no data collection. Available in 9 languages.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui",
+    "browser"
+  ],
+  "orientation": "any",
+  "background_color": "#7FCFF2",
+  "theme_color": "#7FCFF2",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": [
+    "games",
+    "entertainment"
+  ],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "icons/icon-48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/maskable-1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/narrow-1-ride-dunes.png",
+      "sizes": "636x1048",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Animal Rider - ride dunes"
+    },
+    {
+      "src": "screenshots/narrow-2-ride-starlit-hills.png",
+      "sizes": "636x1048",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Animal Rider - ride starlit hills"
+    },
+    {
+      "src": "screenshots/narrow-3-stage-select.png",
+      "sizes": "636x1048",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Animal Rider - stage select"
+    },
+    {
+      "src": "screenshots/narrow-4-collection.png",
+      "sizes": "636x1048",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Animal Rider - collection"
+    },
+    {
+      "src": "screenshots/narrow-5-animal-draw.png",
+      "sizes": "636x1048",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Animal Rider - animal draw"
+    },
+    {
+      "src": "screenshots/wide-1-ride-deep-forest.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Animal Rider - ride deep forest"
+    },
+    {
+      "src": "screenshots/wide-2-ride-ember-valley.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Animal Rider - ride ember valley"
+    },
+    {
+      "src": "screenshots/wide-3-stage-select.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Animal Rider - stage select"
+    },
+    {
+      "src": "screenshots/wide-4-collection.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Animal Rider - collection"
+    }
+  ]
+}

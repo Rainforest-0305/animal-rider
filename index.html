@@ -13,19 +13,40 @@
   ★ brand.ts 를 바꾸면 «여기도 같이» 바꿔라. 자동 동기화 장치가 아직 없다.
 -->
 <title>애니멀 라이더 / Animal Rider</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2713%27%20fill%3D%27%237FCFF2%27%2F%3E%3Cpath%20d%3D%27M0%2044q17-11%2033-4t31-3v27H0z%27%20fill%3D%27%235FAE52%27%2F%3E%3Cpath%20d%3D%27M0%2044q17-11%2033-4t31-3v6q-15-4-31%203T0%2050z%27%20fill%3D%27%239FE58A%27%2F%3E%3Cpath%20d%3D%27M24%2020l-3-11%208%208z%27%20fill%3D%27%23D89A5C%27%2F%3E%3Cpath%20d%3D%27M40%2020l3-11-8%208z%27%20fill%3D%27%23F5CB8E%27%2F%3E%3Ccircle%20cx%3D%2732%27%20cy%3D%2729%27%20r%3D%2711%27%20fill%3D%27%23F5CB8E%27%2F%3E%3Ccircle%20cx%3D%2736%27%20cy%3D%2727%27%20r%3D%272%27%20fill%3D%27%23000%27%2F%3E%3C%2Fsvg%3E" />
 <meta name="description" content="동물을 타고 언덕을 넘으며 공중 회전을 쌓는 곡예 라이더 게임" />
 <style>
-  html,body{margin:0;padding:0;background:#87ceeb;overflow:hidden;height:100%;}
-  #app{display:flex;align-items:center;justify-content:center;height:100%;}
-  canvas{background:#87ceeb;touch-action:none;}
+  /* ★ 캔버스는 «모바일 세로» 우선 반응형이다. 내부 해상도(canvas.width/height)는
+     main.ts 의 resizeCanvas() 가 DPR 을 곱해 세팅한다 - 여기 width/height 속성을
+     다시 박으면 첫 프레임이 960x540 으로 찌그러지니 넣지 말 것. */
+  html,body{margin:0;padding:0;background:#7FCFF2;overflow:hidden;height:100%;width:100%;overscroll-behavior:none;}
+  #app{height:100%;width:100%;}
+  canvas{background:#7FCFF2;touch-action:none;display:block;width:100vw;height:100vh;}
   #hud{position:fixed;top:0;left:0;padding:6px 10px;font:13px/1.5 monospace;color:#000;background:rgba(255,255,255,0.75);white-space:pre;z-index:10;}
 </style>
-  <script type="module" crossorigin src="./assets/index-BuJGYadD.js"></script>
+  <script type="module" crossorigin src="./assets/index-CT2bMeB1.js"></script>
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="./icons/icon-512.png" />
+    <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+    <meta name="application-name" content="Animal Rider" />
+    <meta name="theme-color" content="#7FCFF2" />
 </head>
 <body>
 <div id="app">
-  <canvas id="game" width="960" height="540"></canvas>
+  <canvas id="game"></canvas>
 </div>
 <div id="hud"></div>
+
+    <script>
+      // Injected by store/build_pwa.py - offline support for the PWA build.
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("./sw.js").catch(function (err) {
+            console.warn("[pwa] service worker registration failed:", err);
+          });
+        });
+      }
+    </script>
 </body>
 </html>
