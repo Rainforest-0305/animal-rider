@@ -28,14 +28,14 @@
  *
  * sw.js itself is never precached - a service worker must not cache itself.
  */
-const CACHE = 'animal-rider-v1-fdbe123e';
+const CACHE = 'animal-rider-v1-ff68680c';
 
 /* Precached during install - atomic, keep it small. */
 const SHELL = [
   './',
   './.nojekyll',
   './README.md',
-  './assets/index-CT2bMeB1.js',
+  './assets/index-BCqi9kSB.js',
   './icons/icon-128.png',
   './icons/icon-144.png',
   './icons/icon-152.png',
