@@ -15,5 +15,4 @@ npm run build    # syncs zone assets, then builds into dist/
 
 ## Notes
 
-- No ad SDK is included in this source.
 - Build output (`dist/`), submission bundles (`*.ait`), and internal work logs are not tracked.
