@@ -13,7 +13,6 @@ the air and land clean to keep the combo alive. 48 stages across 6 zones,
 
 - **Offline.** The shell is precached on first load and the zone artwork is
   warmed in the background right after, so the game runs with no network.
-- **No ads.** No ad SDK, no interstitials, no rewarded video.
 - **No sign-in.** No account, no email, no login of any kind.
 - **No data collection.** No analytics, no tracking, no telemetry. Nothing
   leaves the device; progress and settings stay in local storage.

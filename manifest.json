@@ -2,7 +2,7 @@
   "id": "animal-rider",
   "name": "Animal Rider",
   "short_name": "AnimalRider",
-  "description": "One-touch stunt riding. Hold to charge down a slope, let go to launch, and land clean to keep your combo alive. 48 stages across 6 illustrated zones, 144 stars to collect and 24 animals to unlock. Runs offline once loaded, with no ads, no sign-in and no data collection. Available in 9 languages.",
+  "description": "One-touch stunt riding. Hold to charge down a slope, let go to launch, and land clean to keep your combo alive. 48 stages across 6 illustrated zones, 144 stars to collect and 24 animals to unlock. Runs offline once loaded, with no sign-in and no data collection. Available in 9 languages.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
