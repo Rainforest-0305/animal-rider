@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>critterArt devtest — COMMON 8종 라이더 탑승 대조 (not shipped)</title>
+<!--
+  ★ 개발 전용 하네스다. 제품 index.html 과 무관하고 번들에도 포함되지 않는다
+    (vite 는 index.html 만 엔트리로 잡는다). main.ts 를 import 하지 않으므로
+    다른 담당자의 main.ts 작업 중에도 이 페이지는 독립적으로 뜬다.
+  실행: npm run dev → http://localhost:5183/src/render/_devtest.html
+
+  URL 파라미터:
+    ?grade=COMMON|RARE|EPIC|SPECIAL   등급 팔레트(기본 COMMON)
+    ?mount=applied|spec               마운트포인트 소스(기본 applied)
+    ?guides=1                         등라인/좌석선/발끝선 가이드 오버레이
+    ?anim=0                           애니메이션 정지(스크린샷 결정성)
+-->
+<style>
+  html,body{margin:0;background:#7FCFF2;color:#123;
+    font-family:system-ui,'Noto Sans KR',sans-serif;}
+  header{position:sticky;top:0;z-index:5;display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+    padding:8px;background:rgba(255,255,255,.9);border-bottom:1px solid #b9c8d6;}
+  .hbtn{min-height:34px;padding:5px 11px;border:1px solid #b9c8d6;border-radius:9px;
+    background:#fff;font-size:13px;font-weight:700;cursor:pointer;}
+  .hbtn[aria-pressed="true"]{background:#1E8FA8;color:#fff;border-color:#0F5A6B;}
+  h1{font-size:14px;margin:0 10px 0 2px;}
+  #wrap{padding:10px;}
+  canvas#stage{display:block;width:100%;max-width:1160px;height:auto;
+    background:linear-gradient(#7FCFF2 0%,#BEE8F5 58%,#FDEFD8 74%,#5FAE52 74%,#2E6B3E 100%);
+    border-radius:10px;}
+  table{border-collapse:collapse;margin:12px 0;background:rgba(255,255,255,.94);
+    font:11.5px/1.5 ui-monospace,Consolas,monospace;border-radius:8px;overflow:hidden;}
+  th,td{border:1px solid #cfd8e3;padding:3px 7px;text-align:right;white-space:nowrap;}
+  th{background:#eef4f9;}
+  td.name{text-align:left;}
+  .ok{color:#137a3c;font-weight:700;}
+  .bad{color:#c02626;font-weight:700;}
+  .note{max-width:1160px;font-size:12px;line-height:1.6;background:rgba(255,255,255,.9);
+    padding:8px 10px;border-radius:8px;}
+</style>
+</head>
+<body>
+<header>
+  <h1>critterArt — COMMON 8종 라이더 탑승 대조</h1>
+  <div id="ctrls"></div>
+</header>
+<div id="wrap">
+  <canvas id="stage" width="1160" height="560"></canvas>
+  <div id="table"></div>
+  <div class="note" id="note"></div>
+</div>
+<script type="module" src="./_devtest.ts"></script>
+</body>
+</html>

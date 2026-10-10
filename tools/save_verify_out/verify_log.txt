@@ -1,0 +1,77 @@
+
+=== (a) 신규 유저: 저장본 없이 정상 시작 ===
+  __debug = {"saveStatus":"empty","profileStars":0,"stageCleared":false,"stageStars":0,"stageId":"Easy-1","gems":0,"owned":[],"ownedCount":0,"draws":0,"worldX":0}
+  OK   localStorage['ar.save'] 없음(신규)
+  OK   saveStatus='empty' (실측 'empty')
+  OK   별 0 / 보유 0 / 보석 0
+  OK   온보딩 조작안내 토스트 표시(실측 1개)
+
+=== (b) 진행 발생: 스테이지 클리어(별 적립) ===
+  클리어 기록 = Easy-1:1 Easy-2:1 Easy-3:1 Easy-4:1 Easy-5:1 Easy-6:1 Easy-7:1 Easy-8:1 Easy-9:1 Easy-10:1 Moderate1-1:1 Moderate1-2:1
+  __debug = {"saveStatus":"loaded","profileStars":12,"stageCleared":true,"stageStars":1,"stageId":"Moderate1-2","gems":600,"owned":[],"ownedCount":0,"draws":0,"worldX":8416}
+  OK   누적 별 12 (>=12)
+  OK   마일스톤 보석 600 (>=600)
+  저장본 = {"v":1,"savedAt":1787036060126,"starsByStage":{"Easy-1":1,"Easy-2":1,"Easy-3":1,"Easy-4":1,"Easy-5":1,"Easy-6":1,"Easy-7":1,"Easy-8":1,"Easy-9":1,"Easy-10":1,"Moderate1-1":1,"Moderate1-2":1},"gacha":{"gems":600,"ownedIds":[],"drawsCompleted":0},"conditionCounters":{"login_streak":0,"challenge_count":0,"customization_categories":0},"collectionMode":"full_roster_24"}
+  OK   저장본에 스키마 버전 v=1
+
+--- (b2) 가챠 획득 저장 ---
+  __debug = {"saveStatus":"loaded","profileStars":12,"stageCleared":false,"stageStars":0,"stageId":"Easy-1","gems":0,"owned":["sallang"],"ownedCount":1,"draws":1,"worldX":0}
+  저장본 = {"v":1,"savedAt":1787036060744,"starsByStage":{"Easy-1":1,"Easy-2":1,"Easy-3":1,"Easy-4":1,"Easy-5":1,"Easy-6":1,"Easy-7":1,"Easy-8":1,"Easy-9":1,"Easy-10":1,"Moderate1-1":1,"Moderate1-2":1},"gacha":{"gems":0,"ownedIds":["sallang"],"drawsCompleted":1},"conditionCounters":{"login_streak":0,"challenge_count":0,"customization_categories":0},"collectionMode":"full_roster_24"}
+  OK   저장본 보유동물 ["sallang"]
+  OK   저장본 뽑기횟수 1
+
+=== (c) 새로고침 후 상태 잔존 ===
+  __debug = {"saveStatus":"loaded","profileStars":12,"stageCleared":false,"stageStars":0,"stageId":"Easy-1","gems":0,"owned":["sallang"],"ownedCount":1,"draws":1,"worldX":0}
+  OK   saveStatus='loaded' (실측 'loaded')
+  OK   별 12 == 새로고침 전 12
+  OK   보석 0 == 새로고침 전 0
+  OK   보유동물 ["sallang"] == 새로고침 전 ["sallang"]
+  OK   2회 새로고침 후에도 보석 0 (마일스톤 재지급 없음)
+
+=== (d) 손상 주입 내성 ===
+  OK   [garbage-string] 주입 확인("THIS IS NOT JSON {{{ <-- garbage"…)
+  OK   [garbage-string] 게임이 켜진다
+  OK   [garbage-string] saveStatus='corrupt' (기대 'corrupt')
+  OK   [garbage-string] 별 0/보유 0 (기대 0/0)
+      → {"saveStatus":"corrupt","profileStars":0,"stageCleared":false,"stageStars":0,"stageId":"Easy-1","gems":0,"owned":[],"ownedCount":0,"draws":0,"worldX":0}
+  OK   [version-mismatch] 주입 확인("{\"v\":99,\"starsByStage\":{\"Easy-1\":3}}"…)
+  OK   [version-mismatch] 게임이 켜진다
+  OK   [version-mismatch] saveStatus='version-mismatch' (기대 'version-mismatch')
+  OK   [version-mismatch] 별 0/보유 0 (기대 0/0)
+      → {"saveStatus":"version-mismatch","profileStars":0,"stageCleared":false,"stageStars":0,"stageId":"Easy-1","gems":0,"owned":[],"ownedCount":0,"draws":0,"worldX":0}
+  OK   [no-v-field] 주입 확인("{\"starsByStage\":{\"Easy-1\":3}}"…)
+  OK   [no-v-field] 게임이 켜진다
+  OK   [no-v-field] saveStatus='corrupt' (기대 'corrupt')
+  OK   [no-v-field] 별 0/보유 0 (기대 0/0)
+      → {"saveStatus":"corrupt","profileStars":0,"stageCleared":false,"stageStars":0,"stageId":"Easy-1","gems":0,"owned":[],"ownedCount":0,"draws":0,"worldX":0}
+  OK   [array-root] 주입 확인("[1,2,3]"…)
+  OK   [array-root] 게임이 켜진다
+  OK   [array-root] saveStatus='corrupt' (기대 'corrupt')
+  OK   [array-root] 별 0/보유 0 (기대 0/0)
+      → {"saveStatus":"corrupt","profileStars":0,"stageCleared":false,"stageStars":0,"stageId":"Easy-1","gems":0,"owned":[],"ownedCount":0,"draws":0,"worldX":0}
+  OK   [type-mismatch-fields] 주입 확인("{\"v\":1,\"starsByStage\":\"nope\",\"gacha\":123"…)
+  OK   [type-mismatch-fields] 게임이 켜진다
+  OK   [type-mismatch-fields] saveStatus='loaded' (기대 'loaded')
+  OK   [type-mismatch-fields] 별 0/보유 0 (기대 0/0)
+      → {"saveStatus":"loaded","profileStars":0,"stageCleared":false,"stageStars":0,"stageId":"Easy-1","gems":0,"owned":[],"ownedCount":0,"draws":0,"worldX":0}
+  OK   [poisoned-values] 주입 확인("{\"v\":1,\"savedAt\":null,\"starsByStage\":{\"E"…)
+  OK   [poisoned-values] 게임이 켜진다
+  OK   [poisoned-values] saveStatus='loaded' (기대 'loaded')
+  OK   [poisoned-values] 별 3/보유 1 (기대 3/1)
+      → {"saveStatus":"loaded","profileStars":3,"stageCleared":false,"stageStars":0,"stageId":"Easy-2","gems":0,"owned":["kkang"],"ownedCount":1,"draws":1,"worldX":0}
+
+=== 콘솔 집계 ===
+  error/pageerror = 0
+  warning = 4 (손상 주입 단계의 «의도된» 경고 포함)
+    [d] [animal-stunt/save] 저장본 JSON 파싱 실패 — 초기화하고 새로 시작한다. SyntaxError: Unexpected token 'T', "THIS IS NO"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at Ir (http://127.0.0.1:4187/assets/index-DZUkjkli.js:153:28031)
+    at _r (http://127.0.0.1:4187/assets/index-DZUkjkli.js:153:29298)
+    at http://127.0.0.1:4187/assets/index-DZUkjkli.js:153:29928
+    [d] [animal-stunt/save] 스키마 버전 불일치(저장본 v=99, 현재 v=1) — 안전하게 초기화한다.
+    [d] [animal-stunt/save] 저장본에 스키마 버전(v)이 없다 — 초기화한다.
+    [d] [animal-stunt/save] 저장본이 객체가 아니다(array) — 초기화한다.
+  OK   손상 주입 외 구간 콘솔 에러 0
+  OK   전 구간 콘솔 에러 0
+
+=== 결과: ALL PASS ===

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>UI devtest (not shipped)</title>
+<!--
+  ★ 개발 전용 하네스다. 제품 index.html 과 무관하고 번들에도 포함되지 않는다
+    (vite 는 index.html 만 엔트리로 잡는다). main.ts 를 import 하지 않으므로
+    다른 담당자의 main.ts 작업 중에도 이 페이지는 독립적으로 뜬다.
+  실행: npm run dev → http://localhost:5183/src/ui/_devtest.html
+-->
+<style>
+  html,body{margin:0;height:100%;background:#87ceeb;
+    font-family:system-ui,'Noto Sans KR',sans-serif;}
+  /* 캔버스 대신 «게임 화면인 척» 하는 배경 — HUD 바가 실제로 게임 위에 얹히는지 본다. */
+  #fakegame{position:fixed;inset:0;background:
+    linear-gradient(#7FCFF2 0%,#BEE8F5 55%,#FDEFD8 72%,#5FAE52 72%,#2E6B3E 100%);}
+  #harness{position:fixed;top:0;left:0;right:0;display:flex;gap:6px;flex-wrap:wrap;
+    padding:8px;background:rgba(255,255,255,.86);z-index:5;}
+  .hbtn{min-height:36px;padding:6px 12px;border:1px solid #b9c8d6;border-radius:10px;
+    background:#fff;font-size:13px;font-weight:700;cursor:pointer;}
+  #stats,#log{position:fixed;left:8px;font:11px/1.45 ui-monospace,Consolas,monospace;
+    background:rgba(255,255,255,.86);padding:6px 8px;border-radius:8px;margin:0;z-index:5;
+    max-width:min(92vw,420px);white-space:pre-wrap;}
+  #stats{top:60px;}
+  #log{top:150px;max-height:120px;overflow:auto;}
+</style>
+</head>
+<body>
+<div id="fakegame"></div>
+<div id="harness"></div>
+<pre id="stats"></pre>
+<pre id="log"></pre>
+<script type="module" src="./_devtest.ts"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "animal-stunt",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5183",
+    "build": "node tools/sync_zone_assets.mjs && vite build",
+    "preview": "vite preview --port 4183",
+    "sync:zones": "node tools/sync_zone_assets.mjs",
+    "sync:zones:dummy": "node tools/sync_zone_assets.mjs --with-dummy"
+  },
+  "devDependencies": {
+    "@phosphor-icons/core": "^2.1.1",
+    "typescript": "^5.8.3",
+    "vite": "^6.0.0"
+  }
+}

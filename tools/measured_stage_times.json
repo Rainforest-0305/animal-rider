@@ -1,0 +1,14 @@
+{
+  "source": "tools/stage_times_run3.log",
+  "method": "Playwright chromium + vite dev :5183, ?auto=1&ff=t&freeze=1, window.__debug.worldX, t격자 0.25s 선형보간",
+  "measuredAt": "2026-08-06T01:14:41.470Z",
+  "segmentSpeeds": "0~2s=815.4  2~5s=1795.2  5~10s=1430.9  10~20s=1424.0  20~26s=1424.3",
+  "distToSeconds": {
+    "4200": 3.306,
+    "8400": 5.949,
+    "13300": 9.37,
+    "18200": 12.823,
+    "23800": 16.771,
+    "30800": 21.695
+  }
+}
